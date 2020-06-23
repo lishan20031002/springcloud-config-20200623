@@ -1,8 +1,8 @@
-spring:   profiles:     active:     - dev  ## 表示激活哪一个环境，现在激活的为开发环境
+spring:   profiles:     active:     - test  ## 表示激活哪一个环境，现在激活的为开发环境
 --- ## 三个 - 意味着在配置文件中进行分割，表示不同的配置文件
 
 server:
-  port: 8021
+  port: 8201
 spring: 
   profiles: dev    #开发环境
   application: 
