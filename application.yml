@@ -2,7 +2,7 @@ spring:  profiles:    active:    - dev  ## 表示激活哪一个环境，现�
 --- ## 三个 - 意味着在配置文件中进行分割，表示不同的配置文件
 
 spring:
-  profiles:    #开发环境
+  profiles: dev   #开发环境
   application: 
     name: microservicecloud-config-hc-dev
 ---
