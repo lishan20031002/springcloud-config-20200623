@@ -1,0 +1,20 @@
+spring:   profiles:     active:     - dev  ## 表示激活哪一个环境，现在激活的为开发环境
+--- ## 三个 - 意味着在配置文件中进行分割，表示不同的配置文件
+
+server:
+  port: 7001  #注册中心占用7001端口，冒号后面必须要有空格
+spring: 
+  profiles: dev    #开发环境
+  application: 
+    name: microservicecloud-config-eureka-client
+eureka:    instance:      hostname: eureka7001.com  #冒号后面必须要有空格
+   client:      register-with-eureka: false #当前的eurekaServer自己不能注册到服务列表中     fetch-registry: false #通过eureka获取注册信息
+     service-url: 
+       defaultZone: http://eureka-dev.com:7001/eureka
+---
+server:  port: 7002
+spring: 
+  profiles: test  #测试环境
+  application: 
+    name: microservicecloud-config-eureka-client
+eureka:  instance:     hostname: eureka7002.com   client:    register-with-eureka: false #当前的eurekaServer自己不能注册到服务列表中    fetch-registry: false #不能通过eureka获取注册信息    service-url:      defaultZone: http://eureka-test.com:7001/eureka/
